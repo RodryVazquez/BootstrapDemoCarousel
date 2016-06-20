@@ -135,6 +135,6 @@ C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\bin\System.Web.W
 C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\bin\System.Web.Webpages.Razor.xml
 C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\bin\System.Web.Helpers.xml
 C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\bin\System.Web.Mvc.xml
-C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\obj\Debug\BootstrapProject.csprojResolveAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\obj\Debug\BootstrapProject.dll
 C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\obj\Debug\BootstrapProject.pdb
+C:\Users\Rodrigo\Desktop\BootstrapDemoCarousel\BootstrapProject\obj\Debug\BootstrapProject.csprojResolveAssemblyReference.cache

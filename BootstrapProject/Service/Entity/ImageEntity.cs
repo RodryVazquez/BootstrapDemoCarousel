@@ -1,27 +1,30 @@
-﻿using BootstrapProject.Service.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BootstrapProject.Models
+namespace BootstrapProject.Service.Entity
 {
     /// <summary>
     /// 
     /// </summary>
-    public class ImageModel
+    public class ImageEntity
     {
         /// <summary>
         /// 
         /// </summary>
-        [Required]
+        [Key]
+        public int ImageId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string UserName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [Required]
         public string LastName { get; set; }
 
         /// <summary>
@@ -38,26 +41,6 @@ namespace BootstrapProject.Models
         /// 
         /// </summary>
         public string ContentType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public List<string> FileNames { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public ImageEntity ToEntity()
-        {
-            return new ImageEntity()
-            {
-                UserName = UserName,
-                LastName = LastName,
-                Extension = Extension,
-                FileName = FileName,
-                ContentType = ContentType
-            };
-        }
+        
     }
 }

@@ -1,26 +1,65 @@
 ﻿@model BootstrapProject.Models.ImageModel
+@using System.Web.Configuration;
 
-
-@using (Html.BeginForm("Create", "Settings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Index", "Settings", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
-        <h3>Image Carousel</h3>
+        <h3>Register Image</h3>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, String.Empty, new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(m => m.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(m => m.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(p => p.UserName, String.Empty, new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(p => p.LastName, String.Empty, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Image", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="postedFile" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="Create" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
-
 }
-
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3>Image Gallery</h3>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                @{
+                    if (Model.FileNames != null)
+                    {
+                        var relativePath = WebConfigurationManager.AppSettings["ImageCarouselRoute"];
+                        foreach (var fileName in Model.FileNames)
+                        {
+                            var path = relativePath + "/" + fileName;
+                            <div class="col-md-3">
+                                <a href="@path" data-lightbox="image-1" class="thumbnail">
+                                    <img src="@path" />
+                                </a>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
